@@ -9,3 +9,9 @@
 .intro-text {
   color: #fff;
 }
+
+@media only screen and (max-width: 600px) {
+  .repo-container {
+    width: 96%;
+  }
+}
