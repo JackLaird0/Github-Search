@@ -26,9 +26,9 @@ React - Router - Jest
 
 ### _Example_
 
-![Home Screen](https://imgur.com/yacKVhZ)
+![Home Screen](https://i.imgur.com/yacKVhZ.png)
 
-![Repository Details](https://imgur.com/t9Qg22a)
+![Repository Details](https://i.imgur.com/t9Qg22a.png)
 
 ---
 
