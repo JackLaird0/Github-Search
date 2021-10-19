@@ -4,6 +4,10 @@
 
 GitHub Search is an application that displays search results of repositories on GitHub. It allows you to sort by best match, number of stars and programming languages. You can select a repository to see more details about it.
 
+## Live Version
+
+[GitHub Search](https://jacklaird0.github.io/Github-Search/#/)
+
 ## To Run Locally
 
 - Clone down this repo.

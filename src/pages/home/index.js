@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import "./Home.scss";
-import { generateApiQuery, useFetchRepos } from "../../utilities";
-import { Search } from "../../components";
+
 import { SearchResults } from "../";
+import { Search } from "../../components";
+import { generateApiQuery, useFetchRepos } from "../../utilities";
+
+import "./Home.scss";
 
 function Home({ data, setData, setSelectedRepo }) {
   const [queryInfo, setQueryInfo] = useState({});

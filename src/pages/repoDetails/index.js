@@ -1,8 +1,12 @@
 import React, { useEffect } from "react";
-import "./RepoDetails.scss";
+
 import { Star, CallSplit } from "@material-ui/icons";
 import { useHistory } from "react-router-dom";
+
+import { Loading } from "../../components";
 import { useFetchRepoById } from "../../utilities";
+
+import "./RepoDetails.scss";
 
 function RepoDetails({ selectedRepo, setSelectedRepo }) {
   const history = useHistory();
@@ -12,14 +16,14 @@ function RepoDetails({ selectedRepo, setSelectedRepo }) {
     if (repo) {
       setSelectedRepo(repo);
     }
-  }, [repo]);
+  }, [repo, setSelectedRepo]);
 
   const goBack = () => {
     history.push(`/`);
   };
 
   if (!selectedRepo) {
-    return <div>Loading</div>;
+    return <Loading loading={true} />;
   }
 
   if (error) {
@@ -50,7 +54,12 @@ function RepoDetails({ selectedRepo, setSelectedRepo }) {
               className="owner-avatar"
             />
             <p>{owner.login}</p>
-            <a href={owner.html_url} alt="repository-link" target="_blank">
+            <a
+              href={owner.html_url}
+              alt="repository-link"
+              target="_blank"
+              rel="noreferrer"
+            >
               <button>View Profile</button>
             </a>
           </div>
@@ -72,7 +81,12 @@ function RepoDetails({ selectedRepo, setSelectedRepo }) {
             )}
           </div>
           <p className="description">{description}</p>
-          <a href={html_url} alt="repository-link" target="_blank">
+          <a
+            href={html_url}
+            alt="repository-link"
+            target="_blank"
+            rel="noreferrer"
+          >
             <button className="repo-link">View on Github</button>
           </a>
         </div>

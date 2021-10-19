@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
+
+import { RepoCard, Loading } from "../../components";
+
 import "./SearchResults.scss";
-import { RepoCard } from "../../components";
-import PuffLoader from "react-spinners/PuffLoader";
 
 function SearchResults({ response, setData, setSelectedRepo, data }) {
   const { repos, error, loading } = response;
   const [repoData, setRepoData] = useState(null);
-
-  const override = "display: block; margin: 0 auto;";
 
   useEffect(() => {
     if (!repos && data) {
@@ -18,7 +17,13 @@ function SearchResults({ response, setData, setSelectedRepo, data }) {
       setRepoData(repos);
       setData(repos);
     }
-  }, [repos]);
+  }, [repos, data, setData]);
+
+  if (loading) return <Loading loading={loading} />;
+
+  if (error) {
+    return <h2 className="intro-text">{error.message}</h2>;
+  }
 
   if (repoData) {
     return (
@@ -28,19 +33,6 @@ function SearchResults({ response, setData, setSelectedRepo, data }) {
             <RepoCard repoInfo={repoInfo} setSelectedRepo={setSelectedRepo} />
           );
         })}
-      </div>
-    );
-  }
-
-  if (error) {
-    return <h2 className="intro-text">{error.message}</h2>;
-  }
-
-  if (loading) {
-    return (
-      <div>
-        <h2 className="intro-text">Working on it!</h2>
-        <PuffLoader color="white" size={80} css={override} loading={loading} />
       </div>
     );
   }

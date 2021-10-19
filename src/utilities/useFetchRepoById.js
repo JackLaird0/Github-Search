@@ -21,7 +21,7 @@ const useFetchRepoById = (enabled) => {
           setResponse((prev) => ({ ...prev, error }));
         });
     }
-  }, [enabled]);
+  }, [enabled, id]);
 
   return response;
 };

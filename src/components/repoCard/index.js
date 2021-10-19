@@ -1,7 +1,9 @@
 import React from "react";
-import "./RepoCard.scss";
+
 import { useHistory } from "react-router-dom";
 import { ChevronRight, Star, CallSplit } from "@material-ui/icons";
+
+import "./RepoCard.scss";
 
 function RepoCard({ setSelectedRepo, repoInfo }) {
   const { name, owner, id, forks, language, stargazers_count } = repoInfo;
