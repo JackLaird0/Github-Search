@@ -1,10 +1,10 @@
 import React from "react";
 import "./RepoCard.scss";
 import { useHistory } from "react-router-dom";
-import { ChevronRight, Visibility, CallSplit } from "@material-ui/icons";
+import { ChevronRight, Star, CallSplit } from "@material-ui/icons";
 
 function RepoCard({ setSelectedRepo, repoInfo }) {
-  const { name, owner, id, watchers, forks, language } = repoInfo;
+  const { name, owner, id, forks, language, stargazers_count } = repoInfo;
   const { login, avatar_url } = owner;
   const history = useHistory();
 
@@ -21,15 +21,15 @@ function RepoCard({ setSelectedRepo, repoInfo }) {
           <p>{login}</p>
         </div>
         <div className="repo-stats">
-          <Visibility />
-          <p className="watchers">{watchers}</p>
+          <Star />
+          <p className="watchers">{stargazers_count}</p>
           <CallSplit />
           <p>{forks}</p>
         </div>
       </div>
       <div className="card-bot">
         <div className="repo-details">
-          <h2 className="repo-info">{name}</h2>
+          <h2 className="repo-info repo-name">{name}</h2>
           {language && (
             <div className="language">
               <h3 className="repo-info">-</h3>

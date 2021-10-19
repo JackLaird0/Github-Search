@@ -3,7 +3,7 @@ $primary-color: #2b2a33;
 .card-container {
   height: 250px;
   background-color: darken($primary-color, 9%);
-  margin: 6px 0;
+  margin: 3px 0;
   padding: 19px;
   border-radius: 3px;
   display: flex;
@@ -51,11 +51,11 @@ $primary-color: #2b2a33;
 
     .repo-details {
       display: flex;
-      align-items: center;
+      // align-items: center;
       justify-content: space-between;
 
       .repo-info {
-        margin: 15px 15px 0 0;
+        margin: 0 15px 0 0;
       }
 
       .language {
@@ -118,5 +118,16 @@ $primary-color: #2b2a33;
   }
   60% {
     transform: translateX(-5px);
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .card-container {
+    .repo-name {
+      max-width: 215px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
   }
 }
