@@ -1,3 +1,3 @@
-export * from "./home";
-export * from "./repoDetails";
-export * from "./searchResults";
+export * from "./Home";
+export * from "./RepoDetails";
+export * from "./SearchResults";
