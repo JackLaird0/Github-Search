@@ -1,2 +1,3 @@
-export * from "./search";
-export * from "./repoCard";
+export * from "./Search";
+export * from "./RepoCard";
+export * from "./Loading";
