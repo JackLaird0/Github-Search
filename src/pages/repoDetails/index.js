@@ -1,9 +1,12 @@
 import React, { useEffect } from "react";
-import "./RepoDetails.scss";
-import { Loading } from "../../components";
+
 import { Star, CallSplit } from "@material-ui/icons";
 import { useHistory } from "react-router-dom";
+
+import { Loading } from "../../components";
 import { useFetchRepoById } from "../../utilities";
+
+import "./RepoDetails.scss";
 
 function RepoDetails({ selectedRepo, setSelectedRepo }) {
   const history = useHistory();

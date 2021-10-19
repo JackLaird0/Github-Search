@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import "./SearchResults.scss";
+
 import { RepoCard, Loading } from "../../components";
-import PuffLoader from "react-spinners/PuffLoader";
+
+import "./SearchResults.scss";
 
 function SearchResults({ response, setData, setSelectedRepo, data }) {
   const { repos, error, loading } = response;

@@ -1,4 +1,5 @@
 import React from "react";
+
 import PuffLoader from "react-spinners/PuffLoader";
 
 function Loading({ loading }) {
