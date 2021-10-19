@@ -13,7 +13,10 @@ function App() {
         <Home setSelectedRepo={setSelectedRepo} data={data} setData={setData} />
       </Route>
       <Route path="/repository/:id">
-        <RepoDetails />
+        <RepoDetails
+          selectedRepo={selectedRepo}
+          setSelectedRepo={setSelectedRepo}
+        />
       </Route>
     </div>
   );
