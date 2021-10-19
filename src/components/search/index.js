@@ -1,10 +1,10 @@
 import React from "react";
 import "./Search.scss";
 
-function Search(props) {
+function Search({ handleChange, handleSubmit }) {
   const onChange = (e) => {
     const { name, value } = e.target;
-    props.handleChange(name, value);
+    handleChange(name, value);
   };
 
   return (
@@ -35,7 +35,7 @@ function Search(props) {
             </select>
           </div>
         </div>
-        <form onSubmit={(e) => props.handleSubmit(e)}>
+        <form onSubmit={(e) => handleSubmit(e)}>
           <input
             name="text"
             type="text"
