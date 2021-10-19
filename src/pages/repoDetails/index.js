@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./RepoDetails.scss";
-import { Visibility, CallSplit } from "@material-ui/icons";
+import { Star, CallSplit } from "@material-ui/icons";
 import { useHistory } from "react-router-dom";
 import { useFetchRepoById } from "../../utilities";
 
@@ -30,7 +30,7 @@ function RepoDetails({ selectedRepo, setSelectedRepo }) {
     html_url,
     owner,
     name,
-    watchers,
+    stargazers_count,
     description,
     language,
     forks,
@@ -41,7 +41,7 @@ function RepoDetails({ selectedRepo, setSelectedRepo }) {
       <button onClick={goBack} className="go-back">
         Go Back
       </button>
-      <div className="repository-details">
+      <div className="repository-card">
         <div className="details-top">
           <div className="owner-info">
             <img
@@ -57,8 +57,8 @@ function RepoDetails({ selectedRepo, setSelectedRepo }) {
         </div>
         <div className="details-bot">
           <div className="repo-stats">
-            <Visibility />
-            <p>{watchers}</p>
+            <Star />
+            <p>{stargazers_count}</p>
             <CallSplit />
             <p className="forks">{forks}</p>
           </div>
